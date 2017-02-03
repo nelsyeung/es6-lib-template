@@ -23,7 +23,7 @@ npm start
 - `npm start` - Watch for changes and build the dev version of the library to the lib folder.
 - `npm run build` - Build production version of the library to the lib folder.
 - `npm test` - Lint and run tests with coverage.
-- `npm run test:watch` - Run tests in watch mode with coverage at the end.
+- `npm run test:watch` - Run tests in watch mode without coverage.
 
 ## License
 [MIT license](http://opensource.org/licenses/MIT.php)

@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
-const env = require('yargs').argv.mode;
 
+const env = process.env.NODE_ENV;
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const library = 'library';
 const plugins = [];

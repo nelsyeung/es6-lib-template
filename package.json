@@ -4,10 +4,10 @@
   "description": "library description",
   "main": "lib/library.js",
   "scripts": {
-    "build": "webpack --env dev && webpack --env build",
-    "start": "webpack --progress --color -w --env dev",
-    "test": "eslint . && istanbul cover _mocha -- --compilers js:babel-core/register --colors ./test/*.spec.js",
-    "test:watch": "istanbul cover _mocha -- --compilers js:babel-core/register --colors -w ./test/*.spec.js"
+    "build": "cross-env NODE_ENV=dev webpack && cross-env NODE_ENV=build webpack",
+    "start": "cross-env NODE_ENV=dev webpack --progress --color -w",
+    "test": "eslint ./src/ ./test/ && cross-env NODE_ENV=test nyc mocha --compilers js:babel-register --recursive \"./test/**/*.spec.js\"",
+    "test:watch": "mocha --compilers js:babel-register -w --recursive \"./test/**/*.spec.js\""
   },
   "repository": {
     "type": "git",
@@ -28,29 +28,22 @@
   },
   "devDependencies": {
     "babel": "^6.5.2",
-    "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-istanbul": "^3.1.2",
     "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.22.0",
     "chai": "^3.5.0",
+    "cross-env": "^3.1.4",
     "dirty-chai": "^1.2.2",
     "eslint": "^3.12.2",
     "eslint-config-airbnb-base": "^11.0.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-import": "^2.2.0",
-    "istanbul": "^1.0.0-alpha.2",
     "mocha": "^3.2.0",
-    "webpack": "^2.2.0",
-    "yargs": "^6.5.0"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ],
-    "plugins": [
-      "add-module-exports"
-    ]
+    "nyc": "^10.1.2",
+    "webpack": "^2.2.0"
   },
   "eslintConfig": {
     "env": {
@@ -58,5 +51,31 @@
       "mocha": true
     },
     "extends": "airbnb-base"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "istanbul"
+        ]
+      }
+    }
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "sourceMap": false,
+    "instrument": false,
+    "reporter": [
+      "lcov",
+      "text"
+    ]
   }
 }
