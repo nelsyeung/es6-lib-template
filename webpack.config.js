@@ -8,7 +8,7 @@ const plugins = [];
 let outputFile;
 
 if (env === 'build') {
-  plugins.push(new UglifyJsPlugin({ minimize: true }));
+  plugins.push(new UglifyJsPlugin({ sourceMap: true }));
   outputFile = `${library}.min.js`;
 } else {
   outputFile = `${library}.js`;
