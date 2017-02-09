@@ -1,18 +1,8 @@
-const webpack = require('webpack');
 const path = require('path');
 
-const env = process.env.NODE_ENV;
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const library = 'library';
+const outputFile = (process.env.NODE_ENV === 'production') ? `${library}.min.js` : `${library}.js`;
 const plugins = [];
-let outputFile;
-
-if (env === 'build') {
-  plugins.push(new UglifyJsPlugin({ sourceMap: true }));
-  outputFile = `${library}.min.js`;
-} else {
-  outputFile = `${library}.js`;
-}
 
 module.exports = {
   entry: path.join(__dirname, 'src', `${library}.js`),

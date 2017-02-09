@@ -4,8 +4,8 @@
   "description": "library description",
   "main": "lib/library.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=dev webpack && cross-env NODE_ENV=build webpack",
-    "start": "cross-env NODE_ENV=dev webpack --progress --color -w",
+    "build": "webpack && cross-env NODE_ENV=production webpack -p",
+    "start": "webpack --progress --color -w",
     "test": "eslint ./src/ ./test/ && cross-env NODE_ENV=test nyc mocha --compilers js:babel-register --recursive \"./test/**/*.spec.js\"",
     "test:watch": "mocha --compilers js:babel-register -w --recursive \"./test/**/*.spec.js\""
   },
