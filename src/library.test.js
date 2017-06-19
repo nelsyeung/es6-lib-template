@@ -1,4 +1,4 @@
-import Library from '../src/library';
+import Library from './library';
 
 test('Library ES6 code runs perfectly', () => {
   const l = new Library();
