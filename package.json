@@ -4,7 +4,9 @@
   "description": "library description",
   "main": "lib/library.js",
   "scripts": {
-    "build": "webpack && cross-env NODE_ENV=production webpack -p",
+    "build": "npm run prettier && webpack && cross-env NODE_ENV=production webpack -p",
+    "lint": "npm run prettier && eslint .",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write {__tests__,src}/**/*.js",
     "start": "webpack --progress --color -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch"
@@ -37,6 +39,7 @@
     "eslint-loader": "^1.8.0",
     "eslint-plugin-import": "^2.3.0",
     "jest": "^20.0.3",
+    "prettier": "^1.4.4",
     "webpack": "^2.6.1"
   },
   "eslintConfig": {

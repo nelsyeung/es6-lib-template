@@ -2,11 +2,7 @@ import { find } from 'core-js/es6/array';
 
 export default class {
   constructor() {
-    this.helloWorld = [
-      { text: 'hello' },
-      { text: 'world' },
-      { text: '!' },
-    ];
+    this.helloWorld = [{ text: 'hello' }, { text: 'world' }, { text: '!' }];
   }
 
   world() {
