@@ -1,8 +1,10 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const library = 'library';
-const outputFile = (process.env.NODE_ENV === 'production') ? `${library}.min.js` : `${library}.js`;
-const plugins = [];
+const outputFile =
+  process.env.NODE_ENV === 'production' ? `${library}.min.js` : `${library}.js`;
+const plugins = [new webpack.optimize.ModuleConcatenationPlugin()];
 
 module.exports = {
   entry: path.join(__dirname, 'src', `${library}.js`),
@@ -24,10 +26,7 @@ module.exports = {
     ],
   },
   resolve: {
-    modules: [
-      'node_modules',
-      path.resolve('/src'),
-    ],
+    modules: ['node_modules', path.resolve('/src')],
     extensions: ['.js'],
   },
   plugins,

@@ -5,7 +5,7 @@
   "main": "lib/library.js",
   "scripts": {
     "build": "npm run prettier && webpack && cross-env NODE_ENV=production webpack -p",
-    "lint": "npm run prettier && eslint .",
+    "lint": "npm run prettier && eslint src",
     "prettier": "prettier --single-quote --trailing-comma es5 --write src/**/*.js",
     "start": "webpack --progress --color -w",
     "test": "jest --coverage",
@@ -26,21 +26,21 @@
   },
   "homepage": "https://github.com/nelsyeung/es6-library-template",
   "dependencies": {
-    "core-js": "^2.4.1"
+    "core-js": "^2.5.0"
   },
   "devDependencies": {
     "babel-jest": "^20.0.3",
-    "babel-loader": "^7.0.0",
+    "babel-loader": "^7.1.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.24.1",
-    "cross-env": "^5.0.1",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-loader": "^1.8.0",
-    "eslint-plugin-import": "^2.3.0",
-    "jest": "^20.0.3",
-    "prettier": "^1.4.4",
-    "webpack": "^2.6.1"
+    "cross-env": "^5.0.5",
+    "eslint": "^4.4.1",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "jest": "^20.0.4",
+    "prettier": "^1.5.3",
+    "webpack": "^3.5.3"
   },
   "eslintConfig": {
     "env": {
