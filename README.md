@@ -1,8 +1,9 @@
-# ES6 Library Template
+# ES6+ Library Template
 
-> Template to kickstart creating a Javascript library with ES6.
+> Template to kickstart creating a Javascript library with ES6+.
 
 ## Getting started
+
 Clone this or download this repository
 ```
 git clone https://github.com/nelsyeung/es6-lib-template.git
@@ -20,6 +21,7 @@ npm start
 ```
 
 ## Scripts
+
 - `npm start` - Watch for changes and build the dev version of the library to
   the lib folder.
 - `npm run build` - Build production version of the library to the lib folder.
@@ -27,4 +29,5 @@ npm start
 - `npm run test:watch` - Run tests in watch mode without coverage.
 
 ## License
+
 [MIT license](http://opensource.org/licenses/MIT.php)
