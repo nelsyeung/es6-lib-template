@@ -6,6 +6,9 @@ export default class {
   }
 
   world() {
-    return find(this.helloWorld, t => t.text === 'world');
+    return find(this.helloWorld, (t) => {
+      const result = t.text === 'world';
+      return result;
+    });
   }
 }
