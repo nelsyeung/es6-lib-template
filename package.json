@@ -54,7 +54,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nelsyeung/es6-lib-template.git"
+    "url": "https://github.com/nelsyeung/eslatest-lib-template.git"
   },
   "keywords": [
     "browser",
@@ -63,7 +63,7 @@
   "author": "Nelson Yeung",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nelsyeung/es6-library-template/issues"
+    "url": "https://github.com/nelsyeung/eslatest-library-template/issues"
   },
-  "homepage": "https://github.com/nelsyeung/es6-library-template"
+  "homepage": "https://github.com/nelsyeung/eslatest-library-template"
 }
